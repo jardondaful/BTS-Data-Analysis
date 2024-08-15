@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Season Summary</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Your Spotify Summary</h1>
+    </header>
+    
+    <main>
+        <section class="top-artists">
+            <h2>Your Top Artists Stored in Database</h2>
+            <div class="artist-cards">
+                {% for artist in top_artists %}
+                <div class="artist-card">
+                    <h3>{{ artist.name }}</h3>
+                    <p>Popularity: {{ artist.popularity }}</p>
+                    <p>Genres: {{ artist.genres }}</p>
+                    <p>Followers: {{ artist.followers }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section class="top-albums">
+            <h2>Your Top Albums Stored in Database</h2>
+            <div class="album-cards">
+                {% for album in top_albums %}
+                <div class="album-card">
+                    <h3>{{ album.name }}</h3>
+                    <p>Release Date: {{ album.release_date }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+</body>
+</html>

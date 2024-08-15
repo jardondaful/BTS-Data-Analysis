@@ -1,0 +1,16 @@
+# Ignore config.py
+config.py
+
+# Ignore Python bytecode files
+__pycache__/
+*.py[cod]
+
+# Ignore virtual environments
+venv/
+.env/
+
+# Ignore database files
+*.sqlite3
+*.db
+config.py
+config.py
